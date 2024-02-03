@@ -1,8 +1,14 @@
 class IndexController < ApplicationController
     
     @@grid = Array.new(7) { [] }
-    @grid = @@grid
+    
     @@turn = 1
+    
+    helper_method :grid
+    def grid
+        @@grid
+    end
+
     def move
         col = params[:value].to_i
         

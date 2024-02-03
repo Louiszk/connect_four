@@ -7,7 +7,7 @@
         <% 6.times do |row| %>
             <% 7.times do |col| %>
                 
-                <% player = @grid[col][5-row] %>
+                <% player = grid[col][5-row] %>
                 <div id="<%= "div_" + col.to_s + '_' + row.to_s %>" class="aspect-square border-zinc-600 border-2 rounded-md">
                     <div class="<%= 'aspect-square rounded-md m-1 ' + (player ? (player == 1 ? 'bg-red-500' : 'bg-yellow-500'): "") %>"></div>
                 </div>
