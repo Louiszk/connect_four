@@ -32,6 +32,7 @@ class IndexController < ApplicationController
 
     def start
         @grid = @@grid
+        redirect_back fallback_location: root_path
     end
 
 end
