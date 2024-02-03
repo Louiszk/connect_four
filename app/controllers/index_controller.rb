@@ -1,6 +1,7 @@
 class IndexController < ApplicationController
     
     @@grid = Array.new(7) { [] }
+    @grid = @@grid
     @@turn = 1
     def move
         col = params[:value].to_i
@@ -31,8 +32,6 @@ class IndexController < ApplicationController
     end
 
     def start
-        @grid = @@grid
-        redirect_back fallback_location: root_path
     end
 
 end
