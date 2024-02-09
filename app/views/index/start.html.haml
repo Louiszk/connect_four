@@ -1,0 +1,27 @@
+.md:w-1/2.flex.flex-col.items-center.gap-8
+  %H1.text-blue-500.font-bold.text-xl This is Connect 4
+  = button_to "Reset", "index/reset", method: :post, id: "reset", class: "bg-zinc-600 rounded-md text-white font-bold px-3 py-2"
+
+  #gameboard.grid.grid-cols-7.space-x-1.space-y-1.w-10/12.md:w-1/2
+    - 6.times do |row|
+      - 7.times do |col|
+                
+        - player = grid[col][5-row]
+        - additional_color = player ? (player == 1 ? 'bg-red-500' : 'bg-yellow-500'): ''
+
+        {id : "div_#{col}_#{row}"}.aspect-square.border-zinc-600.border-2.rounded-md
+          .aspect-square.rounded-md.m-1{class: "#{additional_color}"}
+                
+      - end
+    - end
+        
+    - 7.times do |index|
+      %button{id : "button_#{index}"}.h-8.bg-blue-500.font-bold.text-xl.rounded-md ^
+    - end
+    
+  #output.text-blue-400.font-semibold.text-lg
+  %H2#output_win.text-blue-500.font-bold.text-5xl
+
+
+
+= javascript_include_tag 'startscript'
