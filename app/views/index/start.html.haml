@@ -7,7 +7,7 @@
         - player = grid[col][5-row]
         - additional_color = player ? (player == 1 ? 'bg-red-500' : 'bg-yellow-500') : ''
         .aspect-square.border-zinc-600.border-2.rounded-md{id: "div_#{col}_#{row}"}
-          {class: "aspect-square rounded-md m-1 #{additional_color}"}
+          %div{class: "aspect-square rounded-md m-1 #{additional_color}"}
     - 7.times do |index|
       %button.h-8.bg-blue-500.font-bold.text-xl.rounded-md{id: "button_#{index}"} ^
   #output.text-blue-400.font-semibold.text-lg
